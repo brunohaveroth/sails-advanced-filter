@@ -1,0 +1,17 @@
+{
+  "name": "sails-advanced-filter",
+  "version": "0.1.0",
+  "description": "Advanced filter for Sails.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bruno Haveroth",
+  "license": "ISC",
+  "directories": {
+    "sequel": "./sequel"
+  },
+  "dependencies": {
+    "lodash": "^4.16.4"
+  }
+}

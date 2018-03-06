@@ -1,0 +1,38 @@
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+#   ╔╦╗╦═╗╔═╗╦  ╦╦╔═╗ ┬ ┬┌┬┐┬                           #
+#    ║ ╠╦╝╠═╣╚╗╔╝║╚═╗ └┬┘││││                           #
+#  o ╩ ╩╚═╩ ╩ ╚╝ ╩╚═╝o ┴ ┴ ┴┴─┘                         #
+#                                                       #
+# This file configures Travis CI.                       #
+# (i.e. how we run the tests... mainly)                 #
+#                                                       #
+# https://docs.travis-ci.com/user/customizing-the-build #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+language: node_js
+
+node_js:
+  - "4"
+  - "5"
+  - "6"
+  - "7"
+  - "node"
+
+services: postgresql
+addons:
+  postgresql: "9.4"
+sudo: false
+env:
+  - DB_USER=postgres DB_PASS=''
+env:
+  - WATERLINE_ADAPTER_TESTS_HOST=127.0.0.1 WATERLINE_ADAPTER_TESTS_USER=postgres WATERLINE_ADAPTER_TESTS_PASSWORD='' WATERLINE_ADAPTER_TESTS_DATABASE=adapter-tests
+before_script:
+  - psql -c 'create database "adapter-tests";' -U postgres
+
+branches:
+  only:
+    - master
+
+notifications:
+  email:
+    - ci@sailsjs.com
