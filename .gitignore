@@ -63,7 +63,7 @@ config/log.js
 #
 ################################################
 coverage
-node_modules
+#node_modules
 bower_components
 assets/avatar
 assets/benefit
