@@ -14,6 +14,7 @@ module.exports = {
 
       if (!parsedCriteria.joins.length) return resolve(req.query);
 
+      parsedCriteria.joins = _.uniq(parsedCriteria.joins, 'alias');
       parsedCriteria.joins.forEach((join)=> {
         let tableJoin = join.model,
           tableJoinAlias = join.alias;
