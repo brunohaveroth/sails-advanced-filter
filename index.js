@@ -12,7 +12,7 @@ module.exports = {
       let query = 'SELECT $tableName.id FROM $tableName $joins WHERE ' + parsedCriteria.query;
       let joins = '';
 
-      if (!parsedCriteria.joins.length) return resolve(req.query);
+      if (!parsedCriteria.joins.length && !parsedCriteria.useConcat) return resolve(req.query);
 
       parsedCriteria.joins = _.uniq(parsedCriteria.joins, 'alias');
       parsedCriteria.joins.forEach((join)=> {
