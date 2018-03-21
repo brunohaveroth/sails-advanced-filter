@@ -5,15 +5,15 @@ Este módulo utiliza o criteriaProcessor.js do [waterline-sequel](https://github
 
 Módulo permite filtrar registros por valores de colunas de tabelas ligadas por relacionamento.
 
-No exemplo abaixo, o req.query contém uma query que tenta filtrar pelo nome do pet, que é um relacionamento da tabela User:
+No exemplo abaixo, o req.query contém uma criteria que tenta filtrar pelo nome do pet, o qual é um relacionamento da tabela User:
+
 ```javascript
 const AdvancedFilter = require('sails-advanced-filter');
 
 /* req.query:
 {
   'name': { contains: 'J' },
-  'pet.name' : { contains: 'filtro por nome do pet' },
-  'address.street' : { contains: 'filtro por nome da rua' }
+  'pet.name' : { contains: 'filtro por nome do pet' }
 }
 */
 
