@@ -40,8 +40,7 @@ Módulo também permite processar a criteria CONCAT, exemplo:
     fields: ['firstName', 'lastName'] ,
     separator: ' ',
     contains: 'J' // funciona tambem com: startWith, endWith, equal
-   },
-  'pet.name' : { contains: 'filtro por nome do pet' }
+   }
 }
 */
 
