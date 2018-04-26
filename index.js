@@ -2,6 +2,16 @@ const _ = require('lodash');
 const CriteriaParser = require('./lib/criteriaProcessor');
 
 module.exports = {
+  find(req) {
+    let modelName = req.options.model || req.options.controller;
+    let Model = req._sails.models[ modelName.toLowerCase() ];
+
+    return this.findQueryIds(req)
+    .then((ids) => {
+      return Model.find(ids);
+    });
+  },
+
   findQueryIds: function(req) {
     return new Promise(function (resolve, reject) {
       let modelName = req.options.model || req.options.controller;
