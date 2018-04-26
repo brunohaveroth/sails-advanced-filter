@@ -18,16 +18,9 @@ const AdvancedFilter = require('sails-advanced-filter');
 */
 
 return AdvancedFilter
-.findQueryIds(req)
-.then((ids)=> {
-  /* Se o req.query tem consultas por colunas de tabelas de relacionamento, retorna os ids dos registros
-  filtrados, caso contrário apenas retorna o valor req.query sem fazer a consulta.*/
-  
-  User
-  .find(ids)
-  .then((users)=> {
-    // Registros filtrados
-  });
+.find(req)
+.then((data)=> {
+  // Resultado da consulta
 });
 ```
 
