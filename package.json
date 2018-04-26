@@ -1,6 +1,6 @@
 {
   "name": "sails-advanced-filter",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Advanced filter for Sails.js",
   "main": "index.js",
   "scripts": {
